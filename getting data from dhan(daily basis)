@@ -1,9 +1,8 @@
 import pandas as pd
 clientid = "1100714776"
 accesstoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNjg3NDM4ODE2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDcxNDc3NiJ9.pO0krO3qb8YnJw-6mYgL8VXRFk2nKRySW3_jANTYJL1d4yMksqlPnImCEDcGdWW3B12U4brkjSCvsM1orF6wXg"
-from dhanhq import dhanhq
-dhan = dhanhq(clientid,accesstoken)
-data = dhan.historical_minute_charts(
+import yfinance as yf
+data = yf.download(
     symbol='SBIN',
     exchange_segment='NSE_EQ',
     instrument_type='EQUITY',
